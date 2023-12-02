@@ -6,11 +6,9 @@ import re
 inputs = []
 with open("/Users/mills/Coding/Python/advent_of_code2023/day1_input.txt", "r") as file:
     for line in file:
-        print(line)
         new_line = ""
         re_match = re.findall(r'((one)|(two)|(three)|(four)|(five)|(six)|(seven)|(eight)|(nine))',line)
         if re_match:
-            print(re_match)
             for match in re_match:
                 if match[0] == "one":
                     if new_line:
@@ -57,9 +55,10 @@ with open("/Users/mills/Coding/Python/advent_of_code2023/day1_input.txt", "r") a
                         new_line = re.sub(match[0], "9", new_line)
                     else:
                         new_line = re.sub(match[0], "9", line)
-            print(new_line)
+            # print(new_line)
             inputs.append(new_line.strip("\n"))
         else:
+            # print(line)
             inputs.append(line.strip("\n"))
 
 print(inputs)
